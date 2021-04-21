@@ -1,0 +1,12 @@
+/* 
+  Default.strings
+  Twitter-MVVM
+
+  Created by Jean Paul Borges Manzini on 21/04/21.
+  
+*/
+
+// MARK: - MainAccounts
+
+"labelCentral" = "See what's happening\nin the world right now.";
+"createAccountBtnTitle" = "Create account";
