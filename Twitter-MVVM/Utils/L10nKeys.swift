@@ -10,7 +10,7 @@ import Foundation
 enum L10nKeys: String {
     
     // MARK: - MainAccount
-    case labelCentral, createAccountBtnTitle, haveAlreadyAccount
+    case labelCentral, createAccountBtnTitle, haveAlreadyAccount, haveAlreadyAccountLogIn
 }
 
 extension L10nKeys {

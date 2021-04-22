@@ -41,7 +41,6 @@
 		8CFC2FCE2630E70F0016BEC0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC2FCD2630E70F0016BEC0 /* LoginViewController.swift */; };
 		8CFC2FD52630E71F0016BEC0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC2FD42630E71F0016BEC0 /* SignUpViewController.swift */; };
 		8CFC2FE626310D8B0016BEC0 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC2FE526310D8B0016BEC0 /* UIFont.swift */; };
-		8CFC2FEA263110B50016BEC0 /* NSAttributedString.Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC2FE9263110B50016BEC0 /* NSAttributedString.Key.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,7 +96,6 @@
 		8CFC2FCD2630E70F0016BEC0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8CFC2FD42630E71F0016BEC0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8CFC2FE526310D8B0016BEC0 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
-		8CFC2FE9263110B50016BEC0 /* NSAttributedString.Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedString.Key.swift; sourceTree = "<group>"; };
 		C1705D2F39040B69192DB5F1 /* Pods-Twitter-MVVMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter-MVVMTests.release.xcconfig"; path = "Target Support Files/Pods-Twitter-MVVMTests/Pods-Twitter-MVVMTests.release.xcconfig"; sourceTree = "<group>"; };
 		E659E2C9598736C5A0A97676 /* Pods-Twitter-MVVM-Twitter-MVVMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter-MVVM-Twitter-MVVMUITests.release.xcconfig"; path = "Target Support Files/Pods-Twitter-MVVM-Twitter-MVVMUITests/Pods-Twitter-MVVM-Twitter-MVVMUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FBB4D9B713625F32F1415A6A /* Pods_Twitter_MVVMTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Twitter_MVVMTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -239,7 +237,6 @@
 				8CEFEC1B2630C3CA00CDC7A8 /* UIImageView.swift */,
 				8CEFEC232630C98300CDC7A8 /* Bundle.swift */,
 				8CFC2FE526310D8B0016BEC0 /* UIFont.swift */,
-				8CFC2FE9263110B50016BEC0 /* NSAttributedString.Key.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -561,7 +558,6 @@
 				8CFC2FCE2630E70F0016BEC0 /* LoginViewController.swift in Sources */,
 				8CEFEBC526308B5100CDC7A8 /* UIViewController.swift in Sources */,
 				8CEFEBE4263094BA00CDC7A8 /* Firebase.swift in Sources */,
-				8CFC2FEA263110B50016BEC0 /* NSAttributedString.Key.swift in Sources */,
 				8CEFEBC02630813200CDC7A8 /* ChatViewController.swift in Sources */,
 				8CEFEBCA26308C7800CDC7A8 /* FactoryTabBar.swift in Sources */,
 				8C36734A262FB7F8000F9B17 /* AppDelegate.swift in Sources */,

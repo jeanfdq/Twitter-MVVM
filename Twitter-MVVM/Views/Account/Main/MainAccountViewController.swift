@@ -34,7 +34,8 @@ class MainAccountViewController: UIViewController {
         btn.setCorner(radius: 21)
         btn.setShadow(radius: 2, opacity: 0.8)
         let text = L10nKeys.createAccountBtnTitle.localized
-        btn.setAttributedTitle(NSAttributedString(string: text, attributes: [.font(): UIFont.bold(size: 18), .foreground(): UIColor.white]), for: .normal)
+        let fontValue = UIFont.systemFont(ofSize: 18, weight: .bold)
+        btn.setAttributedTitle(NSAttributedString(string: text, attributes: [.font: fontValue, .foregroundColor: UIColor.white]), for: .normal)
         btn.frame.size = .init(width: view.frame.size.width * 0.8, height: 42)
         btn.addTapGesture { [weak self] in
             self?.goToSignUp?()
@@ -45,8 +46,11 @@ class MainAccountViewController: UIViewController {
     lazy var bottomLabel: UILabel = {
         let label = UILabel()
         let text = L10nKeys.haveAlreadyAccount.localized
-        let attributedText = NSMutableAttributedString(string: text, attributes: [.foreground(): UIColor.darkGray, .font(): UIFont.regular(size: 13)])
-        attributedText.append(NSAttributedString(string: " LogIn", attributes: [.foreground(): Colors.mainColor, .font(): UIFont.semiBold(size: 13)]))
+        let text2 = L10nKeys.haveAlreadyAccountLogIn.localized
+        let fontRegular = UIFont.systemFont(ofSize: 13, weight: .regular)
+        let fontSemibold = UIFont.systemFont(ofSize: 13, weight: .semibold)
+        let attributedText = NSMutableAttributedString(string: text, attributes: [.foregroundColor: UIColor.darkGray, .font: fontRegular])
+        attributedText.append(NSAttributedString(string: text2, attributes: [.foregroundColor: Colors.mainColor, .font: fontSemibold]))
         label.attributedText = attributedText
         label.isUserInteractionEnabled = true
         label.addTapGesture { [weak self] in
@@ -67,10 +71,11 @@ class MainAccountViewController: UIViewController {
         
         view.backgroundColor = .white
         view.addSubViews(logoTipo, labelApp, createAccountBtn, bottomLabel)
-        logoTipo.applyViewConstraints(top: view.safeAreaLayoutGuide.topAnchor, centerX: view.centerXAnchor, size: logoTipo.frame.size, value: .zero)
+        logoTipo.applyViewConstraints(top: view.safeAreaLayoutGuide.topAnchor, centerX: view.centerXAnchor, size: logoTipo.frame.size)
         labelApp.applyCenterIntoSuperView()
-        createAccountBtn.applyViewConstraints(top: labelApp.bottomAnchor, centerX: labelApp.centerXAnchor, size: createAccountBtn.frame.size, value: .init(top: 20, left: 0, bottom: 0, right: 0))
-        bottomLabel.applyViewConstraints(leading: createAccountBtn.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, value: .init(top: 0, left: 0, bottom: 20, right: 0))
+        createAccountBtn.applyViewConstraints(top: labelApp.bottomAnchor, centerX: labelApp.centerXAnchor, size: createAccountBtn.frame.size, constants: [.top(20)])
+        bottomLabel.applyViewConstraints(leading: createAccountBtn.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, constants: [.bottom(20)])
+        
     }
 
 }

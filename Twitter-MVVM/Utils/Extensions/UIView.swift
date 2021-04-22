@@ -33,34 +33,71 @@ extension UIView {
         }
     }
     
-    func applyViewIntoSuperView(value: UIEdgeInsets = .zero) {
+    enum PaddingType {
+        case left( CGFloat )
+        case right( CGFloat )
+        case top( CGFloat )
+        case bottom( CGFloat )
+    }
+
+    func applyViewIntoSuperView(paddings: [PaddingType] = []) {
         translatesAutoresizingMaskIntoConstraints = false
         
-        leadingAnchor.constraint(equalTo: superview?.leadingAnchor ?? NSLayoutXAxisAnchor(), constant: value.left).isActive = true
-        topAnchor.constraint(equalTo: superview?.topAnchor ?? NSLayoutYAxisAnchor(), constant: value.top).isActive = true
-        trailingAnchor.constraint(equalTo: superview?.trailingAnchor ?? NSLayoutXAxisAnchor(), constant: value.right).isActive = true
-        bottomAnchor.constraint(equalTo: superview?.bottomAnchor ?? NSLayoutYAxisAnchor(), constant: value.bottom).isActive = true
+        var paddingLeft: CGFloat = 0
+        var paddingRight: CGFloat = 0
+        var paddingTop: CGFloat = 0
+        var paddingBottom: CGFloat = 0
+        
+        for padding in paddings {
+            
+            switch padding {
+            case .left (let value): paddingLeft = value
+            case .right (let value): paddingRight = value
+            case .top (let value): paddingTop = value
+            case .bottom (let value): paddingBottom = value
+            }
+        }
+        
+        leadingAnchor.constraint(equalTo: superview?.leadingAnchor ?? NSLayoutXAxisAnchor(), constant: paddingLeft).isActive = true
+        topAnchor.constraint(equalTo: superview?.topAnchor ?? NSLayoutYAxisAnchor(), constant: paddingTop).isActive = true
+        trailingAnchor.constraint(equalTo: superview?.trailingAnchor ?? NSLayoutXAxisAnchor(), constant: paddingRight * (-1)).isActive = true
+        bottomAnchor.constraint(equalTo: superview?.bottomAnchor ?? NSLayoutYAxisAnchor(), constant: paddingBottom * (-1)).isActive = true
         
     }
     
-    func applyViewConstraints( leading: NSLayoutXAxisAnchor? = nil, top: NSLayoutYAxisAnchor? = nil, trailing: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, centerX: NSLayoutXAxisAnchor? = nil, centerY: NSLayoutYAxisAnchor? = nil, size: CGSize = .zero, value: UIEdgeInsets = .zero ) {
+    func applyViewConstraints( leading: NSLayoutXAxisAnchor? = nil, top: NSLayoutYAxisAnchor? = nil, trailing: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, centerX: NSLayoutXAxisAnchor? = nil, centerY: NSLayoutYAxisAnchor? = nil, size: CGSize = .zero, constants: [PaddingType] = [] ) {
         
         translatesAutoresizingMaskIntoConstraints = false
         
+        var paddingLeft: CGFloat = 0
+        var paddingRight: CGFloat = 0
+        var paddingTop: CGFloat = 0
+        var paddingBottom: CGFloat = 0
+        
+        for padding in constants {
+            
+            switch padding {
+            case .left (let value): paddingLeft = value
+            case .right (let value): paddingRight = value
+            case .top (let value): paddingTop = value
+            case .bottom (let value): paddingBottom = value
+            }
+        }
+        
         if let leading = leading {
-            leadingAnchor.constraint(equalTo: leading, constant: value.left).isActive = true
+            leadingAnchor.constraint(equalTo: leading, constant: paddingLeft).isActive = true
         }
         
         if let top = top {
-            topAnchor.constraint(equalTo: top, constant: value.top).isActive = true
+            topAnchor.constraint(equalTo: top, constant: paddingTop).isActive = true
         }
         
         if let trailing = trailing {
-            trailingAnchor.constraint(equalTo: trailing, constant: value.right * (-1)).isActive = true
+            trailingAnchor.constraint(equalTo: trailing, constant: paddingRight * (-1)).isActive = true
         }
         
         if let bottom = bottom {
-            bottomAnchor.constraint(equalTo: bottom, constant: value.bottom * (-1)).isActive = true
+            bottomAnchor.constraint(equalTo: bottom, constant: paddingBottom * (-1)).isActive = true
         }
         
         if let centerYSuperView = centerY {
