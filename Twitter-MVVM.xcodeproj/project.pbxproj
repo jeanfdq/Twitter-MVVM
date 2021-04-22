@@ -37,6 +37,11 @@
 		8CEFEC202630C8A700CDC7A8 /* L10nKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEFEC1F2630C8A700CDC7A8 /* L10nKeys.swift */; };
 		8CEFEC242630C98300CDC7A8 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEFEC232630C98300CDC7A8 /* Bundle.swift */; };
 		8CEFEC282630C9E800CDC7A8 /* Default.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CEFEC272630C9E800CDC7A8 /* Default.strings */; };
+		8CFC2FC72630E0000016BEC0 /* MainAccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC2FC62630E0000016BEC0 /* MainAccountRouter.swift */; };
+		8CFC2FCE2630E70F0016BEC0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC2FCD2630E70F0016BEC0 /* LoginViewController.swift */; };
+		8CFC2FD52630E71F0016BEC0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC2FD42630E71F0016BEC0 /* SignUpViewController.swift */; };
+		8CFC2FE626310D8B0016BEC0 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC2FE526310D8B0016BEC0 /* UIFont.swift */; };
+		8CFC2FEA263110B50016BEC0 /* NSAttributedString.Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC2FE9263110B50016BEC0 /* NSAttributedString.Key.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +93,11 @@
 		8CEFEC1F2630C8A700CDC7A8 /* L10nKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10nKeys.swift; sourceTree = "<group>"; };
 		8CEFEC232630C98300CDC7A8 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		8CEFEC272630C9E800CDC7A8 /* Default.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Default.strings; sourceTree = "<group>"; };
+		8CFC2FC62630E0000016BEC0 /* MainAccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAccountRouter.swift; sourceTree = "<group>"; };
+		8CFC2FCD2630E70F0016BEC0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8CFC2FD42630E71F0016BEC0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		8CFC2FE526310D8B0016BEC0 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		8CFC2FE9263110B50016BEC0 /* NSAttributedString.Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedString.Key.swift; sourceTree = "<group>"; };
 		C1705D2F39040B69192DB5F1 /* Pods-Twitter-MVVMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter-MVVMTests.release.xcconfig"; path = "Target Support Files/Pods-Twitter-MVVMTests/Pods-Twitter-MVVMTests.release.xcconfig"; sourceTree = "<group>"; };
 		E659E2C9598736C5A0A97676 /* Pods-Twitter-MVVM-Twitter-MVVMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter-MVVM-Twitter-MVVMUITests.release.xcconfig"; path = "Target Support Files/Pods-Twitter-MVVM-Twitter-MVVMUITests/Pods-Twitter-MVVM-Twitter-MVVMUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FBB4D9B713625F32F1415A6A /* Pods_Twitter_MVVMTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Twitter_MVVMTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +238,8 @@
 				8CEFEBFE26309B2C00CDC7A8 /* UIView.swift */,
 				8CEFEC1B2630C3CA00CDC7A8 /* UIImageView.swift */,
 				8CEFEC232630C98300CDC7A8 /* Bundle.swift */,
+				8CFC2FE526310D8B0016BEC0 /* UIFont.swift */,
+				8CFC2FE9263110B50016BEC0 /* NSAttributedString.Key.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -284,7 +296,9 @@
 		8CEFEC022630AA3B00CDC7A8 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				8CEFEC032630AA5800CDC7A8 /* MainAccountViewController.swift */,
+				8CFC2FC52630DFF00016BEC0 /* Main */,
+				8CFC2FD32630E7130016BEC0 /* SignUp */,
+				8CFC2FCC2630E7030016BEC0 /* Login */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -303,6 +317,31 @@
 				8CEFEC0F2630B8A700CDC7A8 /* Loading.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		8CFC2FC52630DFF00016BEC0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8CEFEC032630AA5800CDC7A8 /* MainAccountViewController.swift */,
+				8CFC2FC62630E0000016BEC0 /* MainAccountRouter.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8CFC2FCC2630E7030016BEC0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8CFC2FCD2630E70F0016BEC0 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		8CFC2FD32630E7130016BEC0 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				8CFC2FD42630E71F0016BEC0 /* SignUpViewController.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		BFC2E08C6F700ECB827E0379 /* Frameworks */ = {
@@ -340,6 +379,7 @@
 				8C367343262FB7F8000F9B17 /* Frameworks */,
 				8C367344262FB7F8000F9B17 /* Resources */,
 				DB1B7D6DE0D8C8D91CF38F3A /* [CP] Embed Pods Frameworks */,
+				8CFC2FDC2630F0130016BEC0 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -429,6 +469,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8CFC2FDC2630F0130016BEC0 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		9939DD37B9B67A694F4D7EEA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -500,8 +558,10 @@
 				8CEFEBB32630810600CDC7A8 /* SearchViewController.swift in Sources */,
 				8CEFEC242630C98300CDC7A8 /* Bundle.swift in Sources */,
 				8CEFEBAB263080F600CDC7A8 /* HomeViewController.swift in Sources */,
+				8CFC2FCE2630E70F0016BEC0 /* LoginViewController.swift in Sources */,
 				8CEFEBC526308B5100CDC7A8 /* UIViewController.swift in Sources */,
 				8CEFEBE4263094BA00CDC7A8 /* Firebase.swift in Sources */,
+				8CFC2FEA263110B50016BEC0 /* NSAttributedString.Key.swift in Sources */,
 				8CEFEBC02630813200CDC7A8 /* ChatViewController.swift in Sources */,
 				8CEFEBCA26308C7800CDC7A8 /* FactoryTabBar.swift in Sources */,
 				8C36734A262FB7F8000F9B17 /* AppDelegate.swift in Sources */,
@@ -514,10 +574,13 @@
 				8CEFEC1C2630C3CA00CDC7A8 /* UIImageView.swift in Sources */,
 				8CEFEC0B2630B0A800CDC7A8 /* FactoriesViewControllers.swift in Sources */,
 				8CEFEC042630AA5800CDC7A8 /* MainAccountViewController.swift in Sources */,
+				8CFC2FE626310D8B0016BEC0 /* UIFont.swift in Sources */,
+				8CFC2FD52630E71F0016BEC0 /* SignUpViewController.swift in Sources */,
 				8C3673AB262FC3C1000F9B17 /* LauchScreenViewController.swift in Sources */,
 				8CEFEBEA2630966300CDC7A8 /* FIRAuth.swift in Sources */,
 				8C367396262FB93C000F9B17 /* MainTabBarController.swift in Sources */,
 				8CEFEBD426308E3E00CDC7A8 /* Constants.swift in Sources */,
+				8CFC2FC72630E0000016BEC0 /* MainAccountRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

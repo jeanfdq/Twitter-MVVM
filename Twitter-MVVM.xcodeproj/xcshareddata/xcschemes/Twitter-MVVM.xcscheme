@@ -26,25 +26,17 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8C36735B262FB7F9000F9B17"
                BuildableName = "Twitter-MVVMTests.xctest"
                BlueprintName = "Twitter-MVVMTests"
-               ReferencedContainer = "container:Twitter-MVVM.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8C367366262FB7F9000F9B17"
-               BuildableName = "Twitter-MVVMUITests.xctest"
-               BlueprintName = "Twitter-MVVMUITests"
                ReferencedContainer = "container:Twitter-MVVM.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -9,17 +9,17 @@ import UIKit
 
 extension UIView {
     
-    func setCorner(radius:CGFloat) {
+    func setCorner(radius: CGFloat) {
         layer.cornerRadius = radius
         layer.masksToBounds = true
     }
     
-    func setBorder(_ color:UIColor, _ width:CGFloat) {
+    func setBorder(_ color: UIColor, _ width: CGFloat) {
         layer.borderColor   = color.cgColor
         layer.borderWidth   = width
     }
     
-    func setShadow(color:UIColor = .black ,radius: CGFloat, opacity:Float, offSet: CGSize = .init(width: 1, height: 1)){
+    func setShadow( color: UIColor = .black, radius: CGFloat, opacity: Float, offSet: CGSize = .init(width: 1, height: 1)) {
         layer.shadowColor   = color.cgColor
         layer.shadowRadius  = radius
         layer.shadowOpacity = opacity
@@ -27,14 +27,13 @@ extension UIView {
         layer.masksToBounds = false
     }
     
-    func addSubViews(_ views: UIView...){
+    func addSubViews(_ views: UIView...) {
         for view in views {
             addSubview(view)
         }
     }
     
-    func applyViewIntoSuperView(value:UIEdgeInsets = .zero){
-        
+    func applyViewIntoSuperView(value: UIEdgeInsets = .zero) {
         translatesAutoresizingMaskIntoConstraints = false
         
         leadingAnchor.constraint(equalTo: superview?.leadingAnchor ?? NSLayoutXAxisAnchor(), constant: value.left).isActive = true
@@ -44,7 +43,7 @@ extension UIView {
         
     }
     
-    func applyViewConstraints( leading: NSLayoutXAxisAnchor? = nil,  top:NSLayoutYAxisAnchor? = nil,  trailing:NSLayoutXAxisAnchor? = nil,  bottom:NSLayoutYAxisAnchor? = nil, centerX:NSLayoutXAxisAnchor? = nil, centerY:NSLayoutYAxisAnchor? = nil, size:CGSize = .zero, value:UIEdgeInsets = .zero ){
+    func applyViewConstraints( leading: NSLayoutXAxisAnchor? = nil, top: NSLayoutYAxisAnchor? = nil, trailing: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, centerX: NSLayoutXAxisAnchor? = nil, centerY: NSLayoutYAxisAnchor? = nil, size: CGSize = .zero, value: UIEdgeInsets = .zero ) {
         
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -82,7 +81,7 @@ extension UIView {
         
     }
     
-    func applyCenterIntoSuperView(size:CGSize = .zero){
+    func applyCenterIntoSuperView(size: CGSize = .zero) {
         
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -103,7 +102,7 @@ extension UIView {
         }
     }
     
-    func applyJustSize(size:CGSize = .zero) {
+    func applyJustSize(size: CGSize = .zero) {
         translatesAutoresizingMaskIntoConstraints = false
         if size.width != .zero {
             widthAnchor.constraint(equalToConstant: size.width).isActive = true
@@ -114,8 +113,8 @@ extension UIView {
         }
     }
 
-    func  addTapGesture(action : @escaping ()->Void ){
-        let tap = MyTapGestureRecognizer(target: self , action: #selector(self.handleTap(_:)))
+    func  addTapGesture(action : @escaping () -> Void ) {
+        let tap = MyTapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         tap.action = action
         tap.numberOfTapsRequired = 1
         
@@ -129,5 +128,5 @@ extension UIView {
 }
 
 class MyTapGestureRecognizer: UITapGestureRecognizer {
-    var action : (()->Void)? = nil
+    var action : (() -> Void)?
 }

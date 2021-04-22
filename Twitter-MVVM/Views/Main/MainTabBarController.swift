@@ -11,8 +11,6 @@ class MainTabBarController: UITabBarController {
     
     // MARK: - Properties
     
-    var test: String = ""
-    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +45,6 @@ class MainTabBarController: UITabBarController {
     fileprivate func verifyUserLogged() {
         
         if let userID = FIRAuth().currentUserId() {
-            
             
         } else {
             self.presentViewController(makeMainAccount())

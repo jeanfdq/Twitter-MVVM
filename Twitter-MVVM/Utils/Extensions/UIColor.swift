@@ -9,7 +9,7 @@ import UIKit
 
 extension UIColor {
     
-    static func FromHexaToColor(_ hexa:String) -> UIColor {
+    static func fromHexaToColor(_ hexa: String) -> UIColor {
         
         var cString = hexa.uppercased()
         
@@ -21,15 +21,18 @@ extension UIColor {
             return .lightGray
         }
         
-        
-        var rgbValue:UInt64 = 0
+        var rgbValue: UInt64 = 0
         Scanner(string: cString).scanHexInt64(&rgbValue)
         
-        return .init(red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0, green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0, blue: CGFloat(rgbValue & 0x0000FF) / 255.0, alpha: 1)
+        let redValue = CGFloat((rgbValue & 0xFF0000) >> 16)
+        let greenValue = CGFloat((rgbValue & 0x00FF00) >> 8)
+        let blueValue = CGFloat(rgbValue & 0x0000FF)
+        
+        return .init(red: redValue  / 255.0, green: greenValue / 255.0, blue: blueValue / 255.0, alpha: 1)
         
     }
     
-    static func FromRGBToColor(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) -> UIColor {
+    static func fromRGBToColor(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) -> UIColor {
         return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: alpha)
     }
 }

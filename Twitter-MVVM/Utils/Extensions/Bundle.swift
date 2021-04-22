@@ -10,9 +10,7 @@ import Foundation
 extension Bundle {
     
     static var local: Bundle {
-        get {
-            return Bundle(for: AppDelegate.self)
-        }
+        return Bundle(for: AppDelegate.self)
     }
     
 }

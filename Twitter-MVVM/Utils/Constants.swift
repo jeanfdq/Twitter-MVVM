@@ -7,7 +7,7 @@
 
 import UIKit
 
-typealias tuplaImages = (UIImage?, UIImage?)
+typealias TuplaImages = (UIImage?, UIImage?)
 
 struct Colors {
     static let mainColor = UIColor(named: "mainColor") ?? .darkGray

@@ -9,19 +9,19 @@ import UIKit
 
 class FactoryTabBar: NSObject {
     
-    class func home() -> tuplaImages {
+    class func home() -> TuplaImages {
         return (UIImage(systemName: "homekit"), UIImage(systemName: "homekit"))
     }
     
-    class func search() -> tuplaImages {
+    class func search() -> TuplaImages {
         return (UIImage(systemName: "magnifyingglass"), UIImage(systemName: "magnifyingglass"))
     }
     
-    class func favorities() -> tuplaImages {
+    class func favorities() -> TuplaImages {
         return (UIImage(systemName: "bell.badge"), UIImage(systemName: "bell.badge"))
     }
     
-    class func chat() -> tuplaImages {
+    class func chat() -> TuplaImages {
         return (UIImage(systemName: "envelope"), UIImage(systemName: "envelope"))
     }
     

@@ -9,7 +9,7 @@ import UIKit
 
 extension UIViewController {
     
-    func setupTabBar(tabImages: tuplaImages) -> UINavigationController {
+    func setupTabBar(tabImages: TuplaImages) -> UINavigationController {
         
         let nav = UINavigationController(rootViewController: self)
         nav.tabBarItem.image = tabImages.0?.withTintColor(Colors.customGray1).withRenderingMode(.alwaysOriginal)
@@ -28,9 +28,4 @@ extension UIViewController {
         }
         
     }
-    
-    
-    
-    
-    
 }

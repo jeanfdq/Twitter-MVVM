@@ -19,7 +19,6 @@ class MainAccountViewController: UIViewController {
         return image
     }()
     
-    
     let labelApp: UILabel = {
         let label = UILabel()
         label.text = L10nKeys.labelCentral.localized
@@ -34,19 +33,34 @@ class MainAccountViewController: UIViewController {
         btn.backgroundColor = Colors.mainColor
         btn.setCorner(radius: 21)
         btn.setShadow(radius: 2, opacity: 0.8)
-        btn.setAttributedTitle(NSAttributedString(string: L10nKeys.createAccountBtnTitle.localized, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18, weight: .bold), NSAttributedString.Key.foregroundColor : UIColor.white]), for: .normal)
+        let text = L10nKeys.createAccountBtnTitle.localized
+        btn.setAttributedTitle(NSAttributedString(string: text, attributes: [.font(): UIFont.bold(size: 18), .foreground(): UIColor.white]), for: .normal)
         btn.frame.size = .init(width: view.frame.size.width * 0.8, height: 42)
+        btn.addTapGesture { [weak self] in
+            self?.goToSignUp?()
+        }
         return btn
     }()
     
-    let bottomLabel: UILabel = {
+    lazy var bottomLabel: UILabel = {
         let label = UILabel()
-        let attributedText = NSMutableAttributedString(string: "Have an account already?", attributes: [NSAttributedString.Key.foregroundColor : UIColor.darkGray, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13, weight: .regular)])
-        attributedText.append(NSAttributedString(string: " Log In", attributes: [NSAttributedString.Key.foregroundColor : Colors.mainColor, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13, weight: .semibold)]))
+        let text = L10nKeys.haveAlreadyAccount.localized
+        let attributedText = NSMutableAttributedString(string: text, attributes: [.foreground(): UIColor.darkGray, .font(): UIFont.regular(size: 13)])
+        attributedText.append(NSAttributedString(string: " LogIn", attributes: [.foreground(): Colors.mainColor, .font(): UIFont.semiBold(size: 13)]))
         label.attributedText = attributedText
-        
+        label.isUserInteractionEnabled = true
+        label.addTapGesture { [weak self] in
+            self?.goToLogin?()
+        }
         return label
     }()
+    
+    // MARK: - Rerverse Inject Closure
+    
+    var goToLogin: (() -> Void)?
+    var goToSignUp: (() -> Void)?
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

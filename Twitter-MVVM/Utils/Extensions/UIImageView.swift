@@ -9,7 +9,7 @@ import UIKit
 
 extension UIImageView {
     
-    func setNewHeightWidth(newWidth:CGFloat) -> CGSize {
+    func setNewHeightWidth(newWidth: CGFloat) -> CGSize {
         
         let nh = (frame.size.height * newWidth) / frame.size.width
         
